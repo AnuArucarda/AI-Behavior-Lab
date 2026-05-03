@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://android.com">
-    <application android:hasCode="true" android:allowBackup="false" android:label="AI-Behavior-Lab">
+    <application
+        android:hasCode="true"
+        android:allowBackup="false"
+        android:label="AI-Behavior-Lab">
         <meta-data android:name="xposedmodule" android:value="true" />
         <meta-data android:name="xposeddescription" android:value="AI-Behavior-Lab" />
         <meta-data android:name="xposedminversion" android:value="93" />

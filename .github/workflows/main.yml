@@ -9,7 +9,7 @@ jobs:
         with:
           java-version: '17'
           distribution: 'temurin'
-      - name: Fetch Library and Build
+      - name: Fetch Xposed API and Build
         run: |
           mkdir -p app/libs
           wget -O app/libs/XposedBridgeApi-82.jar https://github.com
