@@ -1,20 +1,33 @@
-buildscript {
-    repositories {
-        google()
-        mavenCentral()
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.research.ai_behavior_lab'
+    compileSdk 35
+
+    defaultConfig {
+        applicationId "com.research.ai_behavior_lab"
+        minSdk 27
+        targetSdk 35
+        versionCode 1
+        versionName "1.0"
     }
-    dependencies {
-        classpath 'com.android.tools.build:gradle:8.2.2'
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
     }
 }
 
-allprojects {
-    repositories {
-        google()
-        mavenCentral()
-    }
-}
-
-task clean(type: Delete) {
-    delete rootProject.buildDir
+dependencies {
+    compileOnly 'org.lsposed.lsplugin:lsplugin-api:1.6.2'
+    implementation 'org.lsposed.hiddenapibypass:hiddenapibypass:4.3'
 }
