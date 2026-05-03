@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://android.com">
+<manifest xmlns:android="http://android.com"
+    package="com.research.ai_behavior_lab">
     <application android:hasCode="true" android:allowBackup="false">
         <meta-data
             android:name="xposedmodule"
