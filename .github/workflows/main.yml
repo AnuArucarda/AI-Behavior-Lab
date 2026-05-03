@@ -9,14 +9,10 @@ jobs:
         with:
           java-version: '17'
           distribution: 'temurin'
-      - name: Setup Wrapper & Dependencies
+      - name: Build with Gradle
         run: |
-          mkdir -p app/libs
-          curl -L -o app/libs/XposedBridgeApi-82.jar https://github.com/rovo89/XposedBridge/raw/master/jar/XposedBridgeApi-82.jar
-          gradle wrapper --gradle-version 8.7
           chmod +x gradlew
-      - name: Build APK
-        run: ./gradlew assembleRelease
+          ./gradlew :app:assembleRelease
       - uses: actions/upload-artifact@v4
         with:
           name: AI-Behavior-Lab-APK
