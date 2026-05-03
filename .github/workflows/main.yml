@@ -9,8 +9,10 @@ jobs:
         with:
           java-version: '17'
           distribution: 'temurin'
-      - name: Build
+      - name: Fetch Library and Build
         run: |
+          mkdir -p app/libs
+          wget -O app/libs/XposedBridgeApi-82.jar https://github.com
           gradle wrapper --gradle-version 8.7
           chmod +x gradlew
           ./gradlew assembleRelease
