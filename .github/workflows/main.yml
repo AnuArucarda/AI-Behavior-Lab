@@ -18,10 +18,10 @@ jobs:
           distribution: 'temurin'
           cache: gradle
 
-      - name: Fetch Xposed API (Modern Remote)
+      - name: Fetch Xposed API (Fixed Binary Link)
         run: |
           mkdir -p app/libs
-          wget -q https://github.com -O app/libs/XposedBridgeApi-82.jar
+          wget -q "https://github.com" -O app/libs/XposedBridgeApi-82.jar
 
       - name: Modern Gradle Build
         run: |
