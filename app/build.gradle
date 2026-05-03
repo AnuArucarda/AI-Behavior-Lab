@@ -1,0 +1,15 @@
+plugins { id 'com.android.application' }
+android {
+    namespace 'com.research.ai_behavior_lab'
+    compileSdk 35
+    defaultConfig {
+        applicationId "com.research.ai_behavior_lab"
+        minSdk 34
+        targetSdk 35
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+}
+dependencies { compileOnly 'org.lsposed.lsposed:api:1.0.0' }
