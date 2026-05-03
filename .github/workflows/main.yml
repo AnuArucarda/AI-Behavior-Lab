@@ -2,6 +2,8 @@ name: Build AI-Behavior-Lab
 on:
   push:
     branches: [ "main" ]
+  workflow_dispatch:
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -12,11 +14,13 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
           cache: gradle
+
       - name: Build
         run: |
           chmod +x gradlew
           sed -i 's/\r$//' gradlew
           ./gradlew assembleRelease
+
       - name: Upload
         uses: actions/upload-artifact@v4
         with:
