@@ -3,7 +3,7 @@
 
     <application
         android:hasCode="true"
-        android:allowBackup="true"
+        android:allowBackup="false"
         android:label="AI Behavior Lab">
 
         <meta-data
