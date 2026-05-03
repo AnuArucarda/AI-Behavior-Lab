@@ -1,29 +1,48 @@
-plugins {
-    id 'com.android.application'
-}
+plugins { id 'com.android.application' }
 
 android {
     namespace 'com.research.ai_behavior_lab'
     compileSdk 35
-
+    buildToolsVersion "35.0.0"
     defaultConfig {
         applicationId "com.research.ai_behavior_lab"
         minSdk 26
         targetSdk 35
         versionCode 1777823195
         versionName "1.0503.1146"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
-
     buildFeatures {
         buildConfig true
+        aidl false
     }
-
+    buildTypes {
+        debug {
+            debuggable true
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        release {
+            debuggable false
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_17
         targetCompatibility JavaVersion.VERSION_17
+    }
+    lintOptions {
+        checkReleaseBuilds true
+        abortOnError false
     }
 }
 
 dependencies {
     compileOnly 'org.lsposed.lsposed:api:1.0.0'
+    implementation 'org.lsposed.hiddenapibypass:hiddenapibypass:4.3'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
 }
