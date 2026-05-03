@@ -1,11 +1,17 @@
 plugins { id 'com.android.application' }
 android {
     namespace 'com.research.ai_behavior_lab'
-    compileSdk 35
+    compileSdk 36
     defaultConfig {
         applicationId "com.research.ai_behavior_lab"
         minSdk 34
-        targetSdk 35
+        targetSdk 36
+        versionCode 1
+        versionName "1.0"
+    }
+    // Optimization for Android 16/Tensor 64-bit
+    packagingOptions {
+        jniLibs { useLegacyPackaging = false }
     }
 }
 dependencies { compileOnly 'org.lsposed.lsposed:api:1.0.0' }
