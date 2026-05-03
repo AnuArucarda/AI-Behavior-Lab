@@ -1,16 +1,13 @@
 package com.research.ai_behavior_lab;
-import de.robv.android.xposed.*;
+
+import de.robv.android.xposed.IXposedHookLoadPackage;
 import de.robv.android.xposed.callbacks.XC_LoadPackage.LoadPackageParam;
+import de.robv.android.xposed.XposedBridge;
 
 public class MainHook implements IXposedHookLoadPackage {
+    @Override
     public void handleLoadPackage(LoadPackageParam lpparam) throws Throwable {
-        if (!lpparam.packageName.equals("com.openai.chatgpt")) return;
-        XposedBridge.log("AI_LAB: Connected to ChatGPT");
-        
-        XposedHelpers.findAndHookMethod("android.widget.TextView", lpparam.classLoader, "setText", CharSequence.class, new XC_MethodHook() {
-            protected void beforeHookedMethod(MethodHookParam param) {
-                XposedBridge.log("AI_LAB: Intercepted: " + param.args[0]);
-            }
-        });
+        // This log will appear in the LSPosed Manager logs
+        XposedBridge.log("AI Behavior Lab active for: " + lpparam.packageName);
     }
 }
