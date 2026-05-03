@@ -4,7 +4,7 @@
     <application
         android:hasCode="true"
         android:allowBackup="false"
-        android:label="AI Behavior Lab">
+        android:label="AI-Behavior-Lab">
 
         <meta-data
             android:name="xposedmodule"
@@ -12,7 +12,7 @@
 
         <meta-data
             android:name="xposeddescription"
-            android:value="AI Behavior Lab" />
+            android:value="AI-Behavior-Lab Module" />
 
         <meta-data
             android:name="xposedminversion"
