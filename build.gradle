@@ -1,7 +1,10 @@
-buildscript {
-    repositories { google(); mavenCentral() }
-    dependencies { classpath 'com.android.tools.build:gradle:8.2.2' }
-}
-allprojects {
-    repositories { google(); mavenCentral() }
+plugins { id 'com.android.application' }
+android {
+    namespace 'com.research.ai_behavior_lab'
+    compileSdk 36
+    defaultConfig {
+        applicationId "com.research.ai_behavior_lab"
+        minSdk 34
+        targetSdk 36
+    }
 }
