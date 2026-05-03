@@ -10,13 +10,13 @@ android {
         applicationId "com.research.ai_behavior_lab"
         minSdk 33
         targetSdk 35
-        versionCode 1777840175
+        versionCode 1777840336
         versionName "1.0"
     }
 }
 
 dependencies {
-    // This tells Gradle to look for any JARs in the libs folder
-    compileOnly fileTree(dir: 'libs', include: ['*.jar'])
+    // Official LSPosed API from Maven Central (No JAR file needed)
+    compileOnly 'io.github.libxposed:api:1.0.0'
     implementation 'org.lsposed.hiddenapibypass:hiddenapibypass:4.3'
 }

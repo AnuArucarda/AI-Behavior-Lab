@@ -15,11 +15,6 @@ jobs:
           distribution: 'temurin'
           cache: gradle
 
-      - name: Direct Download Missing API
-        run: |
-          mkdir -p app/libs
-          wget -O app/libs/XposedBridgeApi-82.jar https://github.com
-
       - name: Build APK
         run: |
           chmod +x gradlew
