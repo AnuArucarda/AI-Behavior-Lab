@@ -6,7 +6,7 @@
             android:value="true" />
         <meta-data
             android:name="xposeddescription"
-            android:value="AI Behavior Analysis Lab" />
+            android:value="AI Behavior Lab" />
         <meta-data
             android:name="xposedminversion"
             android:value="93" />
