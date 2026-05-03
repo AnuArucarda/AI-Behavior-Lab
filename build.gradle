@@ -1,33 +1,39 @@
 plugins {
-    id 'com.android.application'
+    id 'com.android.application' version '8.2.0' apply false
 }
 
-android {
-    namespace 'com.research.ai_behavior_lab'
-    compileSdk 35
-
-    defaultConfig {
-        applicationId "com.research.ai_behavior_lab"
-        minSdk 27
-        targetSdk 35
-        versionCode 1
-        versionName "1.0"
-    }
-
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+subprojects {
+    afterEvaluate { project ->
+        if (project.hasProperty('android')) {
+            android {
+                compileSdk 35
+                buildToolsVersion "35.0.0"
+                defaultConfig {
+                    minSdk 27
+                    targetSdk 35
+                }
+                buildTypes {
+                    debug {
+                        debuggable true
+                        minifyEnabled false
+                    }
+                    release {
+                        minifyEnabled true
+                        shrinkResources true
+                        proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+                    }
+                }
+                lintOptions {
+                    checkReleaseBuilds true
+                    abortOnError false
+                    warningsAsErrors false
+                    disable 'MissingTranslation', 'ExtraTranslation'
+                }
+                compileOptions {
+                    sourceCompatibility JavaVersion.VERSION_17
+                    targetCompatibility JavaVersion.VERSION_17
+                }
+            }
         }
     }
-    
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_17
-        targetCompatibility JavaVersion.VERSION_17
-    }
-}
-
-dependencies {
-    compileOnly 'org.lsposed.lsplugin:lsplugin-api:1.6.2'
-    implementation 'org.lsposed.hiddenapibypass:hiddenapibypass:4.3'
 }
